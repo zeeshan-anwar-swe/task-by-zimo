@@ -1,0 +1,275 @@
+$clr-primary: #279847;
+$clr-secondary: #444444;
+$clr-dark: #171717;
+$clr-light: #EDEDED;
+
+html,
+body {
+    user-select: none;
+    scroll-behavior: smooth;
+    background-color: $clr-dark !important;
+    color: $clr-light !important;
+
+    #__next {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: $clr-primary;
+}
+
+::-webkit-scrollbar-track {
+    background-color: $clr-secondary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500 !important;
+}
+
+
+
+
+// **************************************** components -------------------------------
+.header{
+  position: absolute;
+  z-index: 5;
+  padding: 20px 0;
+  width: 100%;
+
+  .nav{
+    background-color: #2798479e;
+    border-radius: 15px;
+  }
+}
+
+
+.hero{
+  min-height: 100vh;
+  background-image: url('../media/shopping.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.home-contact {
+  background: linear-gradient(to left, #279847, #27984734), url('../media/storebg2.jpg') no-repeat center;
+  background-size: cover;
+  padding: 100px 0;
+  position: relative;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+  margin: 8rem 0;
+
+  .h-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    backdrop-filter: blur(1px);
+  }
+}
+
+
+.card{
+  border-radius: 15px;
+  overflow: hidden;
+  .card-body{
+    padding: 1rem;
+  }
+  .heading-wrapper{
+    position: relative;
+    .overlay-grad {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      background-image: linear-gradient( to left, $clr-secondary, transparent);
+      height: 100%;
+    }
+  }
+}
+
+
+.pagination{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  li{
+    color: $clr-light;
+    border-radius: 6px;
+    a{
+      border-radius: 6px;
+      background-color: $clr-secondary;
+      display: inline-block;
+      font-weight: 600;
+      padding: 0.1rem 1rem;
+      font-size: 18px;
+    }
+    &.active {
+      a {
+        background-color: unset;
+      }
+    
+      background-color: $clr-primary !important;
+    }
+  }
+
+
+  
+
+  @media only screen and (max-width: 600px) {
+    a{
+      font-size: 16px;
+      padding: 0.1rem 0.5rem;
+    }
+  }
+}
+
+
+
+.cart-item{
+  background-color: #00000041;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  margin: 1rem 0;
+
+  img{
+    border-radius: 8px;
+  }
+
+  .del{
+    position: absolute;
+    bottom: 4px;right: 4px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 4px;
+    &:hover{
+      background-color: rgba(255, 255, 255, 0.274);
+    }
+  }
+}
+
+
+
+
+// **************************************** overrides -------------------------------
+.btn-primary{
+  background-color: $clr-primary !important;
+  &:hover{
+    filter: brightness(0.9);
+  }
+}
+
+// drawer background
+.cart-content-wrapper{
+  background-color: $clr-secondary !important;
+}
+
+
+.card{
+  color: white !important;
+  background-color: #444444 !important;
+  
+  .img-wrapper{
+    height: 300px;
+    overflow: hidden;
+  }
+  img{
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+  }
+}
+
+.scroll-to-top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% !important;
+ 
+}
+
+.react__star__rating__lite__stars{
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+
+.product-hero {
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: contain;
+  flex-direction: column;
+  position: relative;
+  background-position: center;
+  background-attachment: fixed;
+
+  // override
+  .overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), #2798479e);
+    backdrop-filter: blur(8px);
+  }
+}
+
+
+.image-gallery-thumbnail-image{
+  height: 80px;
+  object-fit: contain;
+}
+
+
+
+// **************************************** utils -------------------------------
+.overlay{
+  position: absolute;
+  top: 0;left: 0;bottom: 0;right: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.582));
+  backdrop-filter: blur(3px);
+}
+
+.text-primary{
+  color: $clr-primary;
+}
+
+
+.text-grad{
+  font-size: 72px;
+  background: -webkit-linear-gradient($clr-primary, rgb(105, 255, 150));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.bold{
+  font-weight: 900;
+}
